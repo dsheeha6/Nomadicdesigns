@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadic Designs | Web. Automation. Anywhere.</title>
+  <meta name="description" content="Nomadic Designs: Web, Automation, and AI solutions for small businesses.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#121212',
+            forest: '#228B22',
+            accent: '#4ADE80',
+            light: '#F3F4F6',
+            darkgrey: '#23272A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .logo-code {
+      font-family: 'Fira Mono', 'Menlo', 'monospace';
+      color: #e34c26;
+      letter-spacing: 0.01em;
+    }
+    .typed-cursor {
+      display: inline-block;
+      width: 1.1ch;
+      height: 1.1em;
+      background: #e34c26;
+      margin-left: 2px;
+      vertical-align: -0.1em;
+      animation: blink 1s steps(1) infinite;
+      border-radius: 2px;
+    }
+    @keyframes blink {
+      0%, 60% { opacity: 1; }
+      61%, 100% { opacity: 0; }
+    }
+    @keyframes plane-1 {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+    @keyframes plane-2 {
+      0% { transform: translate(-50%, -50%) rotate(120deg) translateX(200px) rotate(-120deg); }
+      100% { transform: translate(-50%, -50%) rotate(480deg) translateX(200px) rotate(-480deg); }
+    }
+    @keyframes plane-3 {
+      0% { transform: translate(-50%, -50%) rotate(240deg) translateX(200px) rotate(-240deg); }
+      100% { transform: translate(-50%, -50%) rotate(600deg) translateX(200px) rotate(-600deg); }
+    }
+    .animate-plane-1 {
+      animation: plane-1 20s linear infinite;
+    }
+    .animate-plane-2 {
+      animation: plane-2 20s linear infinite;
+    }
+    .animate-plane-3 {
+      animation: plane-3 20s linear infinite;
+    }
+    .scroll-car {
+      animation: driveCar 1s linear forwards;
+      animation-play-state: paused;
+      animation-timeline: scroll();
+      animation-range: entry 25% cover 75%;
+    }
+
+    @keyframes driveCar {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(calc(100vw + 100%));
+      }
+    }
+
+    .car {
+      transform: translateX(-100%);
+      will-change: transform;
+      transition: none;
+    }
+    
+    #car-section {
+      min-height: 16rem;
+      position: relative;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="white"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Fira Mono, Menlo, monospace" font-size="28" fill="%23e34c26" font-weight="bold" >&lt;/ND&gt;</text></svg>' />
+</head>
+<body class="bg-background text-light min-h-screen">
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 bg-background/80 backdrop-blur border-b border-darkgrey">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#hero" class="logo-code text-2xl font-bold tracking-tight">&lt;/Nomadic Designs&gt;</a>
+      <div class="hidden md:flex gap-8 text-light font-medium">
+        <a href="#about" class="text-white hover:text-[#e34c26] transition-colors">About</a>
+        <a href="#portfolio" class="text-white hover:text-[#e34c26] transition-colors">Portfolio</a>
+        <a href="#services" class="hover:text-forest transition">Services</a>
+        <a href="#testimonials" class="text-white hover:text-[#e34c26] transition-colors">Testimonials</a>
+        <a href="#contact" class="text-white hover:text-[#e34c26] transition-colors">Contact</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-light focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden flex-col gap-4 px-6 pb-4 bg-background">
+      <a href="#about" class="block py-2 hover:text-forest transition">About</a>
+      <a href="#portfolio" class="block py-2 hover:text-forest transition">Work</a>
+      <a href="#services" class="block py-2 hover:text-forest transition">Services</a>
+      <a href="#testimonials" class="block py-2 hover:text-forest transition">Testimonials</a>
+      <a href="#contact" class="block py-2 hover:text-forest transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center">
+    <video class="absolute inset-0 w-full h-full object-cover" src="tandm.mp4" autoplay loop muted playsinline></video>
+    <div class="absolute inset-0 bg-background/80"></div>
+    <div class="relative z-10 text-center max-w-2xl mx-auto px-4 fade-in">
+      <h1 class="logo-code text-4xl md:text-6xl font-bold mb-6"><span id="typed-logo"></span><span class="typed-cursor" id="typed-cursor"></span></h1>
+      <p class="text-xl md:text-2xl text-forest mb-8 font-light">Web. Automation. Anywhere.</p>
+      <a href="#contact" class="inline-block px-8 py-3 bg-forest text-white rounded-lg font-semibold shadow-lg hover:bg-accent transition">Start Journey</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-[#181c1f] fade-in">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4">
+      <!-- Photo/Icon -->
+      <div class="flex-shrink-0 w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg border-4 border-forest bg-darkgrey flex items-center justify-center">
+        <div class="flex flex-col items-center">
+          <div class="relative w-48 h-48 mb-6">
+            <div class="absolute inset-0 bg-[#e34c26] rounded-full transform rotate-3"></div>
+            <a href="https://www.linkedin.com/in/dannysheehan-/" target="_blank" rel="noopener noreferrer">
+              <img src="my-notion-face-portrait (1) copy.png" alt="Danny Sheehan" class="relative w-full h-full object-cover rounded-full border-4 border-white">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card/Text -->
+      <div class="flex-1 bg-darkgrey rounded-2xl shadow-xl border-l-4 border-forest p-8 md:ml-[-2rem] relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-forest">About</h2>
+        <p class="text-lg text-light mb-2">&lt;/Nomadic Designs&gt; is dedicated to helping small businesses thrive online with modern websites, high-converting landing pages, and AI-powered solutions. My mission is to empower entrepreneurs to grow and automate, wherever they are in the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative Background -->
+  <div class="relative h-64 bg-[#121212] overflow-hidden" id="car-section">
+    <!-- Car -->
+    <div class="absolute bottom-12 left-1/2 w-24 h-16 car z-40">
+      <svg viewBox="0 0 100 60" class="w-full h-full">
+        <!-- Car Body -->
+        <path d="M10,40 L90,40 L85,25 L75,20 L25,20 L15,25 Z" fill="#e34c26"/>
+        <!-- Roof -->
+        <path d="M25,20 L75,20 L70,15 L30,15 Z" fill="#e34c26"/>
+        <!-- Windows -->
+        <path d="M25,15 L35,15 L35,20 L25,20 Z" fill="#1a1f22"/>
+        <path d="M40,15 L50,15 L50,20 L40,20 Z" fill="#1a1f22"/>
+        <path d="M55,15 L65,15 L65,20 L55,20 Z" fill="#1a1f22"/>
+        <!-- Wheels -->
+        <circle cx="25" cy="40" r="6" fill="#1a1f22"/>
+        <circle cx="75" cy="40" r="6" fill="#1a1f22"/>
+        <!-- Headlights -->
+        <path d="M85,30 L90,30 L90,35 L85,35 Z" fill="white"/>
+        <!-- Taillights -->
+        <path d="M10,30 L15,30 L15,35 L10,35 Z" fill="#e34c26"/>
+      </svg>
+    </div>
+
+    <!-- Mountains -->
+    <div class="absolute bottom-0 left-0 w-full z-10">
+      <svg class="w-full h-32" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <path d="M0,200 L0,100 L100,50 L200,120 L300,40 L400,100 L500,20 L600,80 L700,30 L800,90 L900,40 L1000,100 L1000,200 Z" fill="#181c1f"/>
+        <path d="M0,200 L0,120 L150,80 L300,140 L450,60 L600,120 L750,40 L900,100 L1000,80 L1000,200 Z" fill="#1a1f22"/>
+        <path d="M0,200 L0,140 L200,100 L400,160 L600,80 L800,140 L1000,100 L1000,200 Z" fill="#1d2225"/>
+      </svg>
+    </div>
+    
+    <!-- Trees -->
+    <div class="absolute bottom-0 left-0 w-full">
+      <svg class="w-full h-48" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <!-- Tree 1 -->
+        <path d="M50,200 L50,100 L30,100 L50,60 L70,100 L50,100 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M50,200 L50,120 L30,120 L50,80 L70,120 L50,120 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M50,200 L50,140 L30,140 L50,100 L70,140 L50,140 Z" fill="#228B22"/>
+        
+        <!-- Tree 2 -->
+        <path d="M150,200 L150,80 L130,80 L150,40 L170,80 L150,80 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M150,200 L150,100 L130,100 L150,60 L170,100 L150,100 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M150,200 L150,120 L130,120 L150,80 L170,120 L150,120 Z" fill="#228B22"/>
+        
+        <!-- Tree 3 -->
+        <path d="M250,200 L250,90 L230,90 L250,50 L270,90 L250,90 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M250,200 L250,110 L230,110 L250,70 L270,110 L250,110 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M250,200 L250,130 L230,130 L250,90 L270,130 L250,130 Z" fill="#228B22"/>
+        
+        <!-- Tree 4 -->
+        <path d="M350,200 L350,70 L330,70 L350,30 L370,70 L350,70 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M350,200 L350,90 L330,90 L350,50 L370,90 L350,90 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M350,200 L350,110 L330,110 L350,70 L370,110 L350,110 Z" fill="#228B22"/>
+        
+        <!-- Tree 5 -->
+        <path d="M450,200 L450,85 L430,85 L450,45 L470,85 L450,85 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M450,200 L450,105 L430,105 L450,65 L470,105 L450,105 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M450,200 L450,125 L430,125 L450,85 L470,125 L450,125 Z" fill="#228B22"/>
+        
+        <!-- Tree 6 -->
+        <path d="M550,200 L550,75 L530,75 L550,35 L570,75 L550,75 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M550,200 L550,95 L530,95 L550,55 L570,95 L550,95 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M550,200 L550,115 L530,115 L550,75 L570,115 L550,115 Z" fill="#228B22"/>
+        
+        <!-- Tree 7 -->
+        <path d="M650,200 L650,95 L630,95 L650,55 L670,95 L650,95 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M650,200 L650,115 L630,115 L650,75 L670,115 L650,115 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M650,200 L650,135 L630,135 L650,95 L670,135 L650,135 Z" fill="#228B22"/>
+        
+        <!-- Tree 8 -->
+        <path d="M750,200 L750,65 L730,65 L750,25 L770,65 L750,65 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M750,200 L750,85 L730,85 L750,45 L770,85 L750,85 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M750,200 L750,105 L730,105 L750,65 L770,105 L750,105 Z" fill="#228B22"/>
+        
+        <!-- Tree 9 -->
+        <path d="M850,200 L850,90 L830,90 L850,50 L870,90 L850,90 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M850,200 L850,110 L830,110 L850,70 L870,110 L850,110 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M850,200 L850,130 L830,130 L850,90 L870,130 L850,130 Z" fill="#228B22"/>
+        
+        <!-- Tree 10 -->
+        <path d="M950,200 L950,80 L930,80 L950,40 L970,80 L950,80 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M950,200 L950,100 L930,100 L950,60 L970,100 L950,100 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M950,200 L950,120 L930,120 L950,80 L970,120 L950,120 Z" fill="#228B22"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 bg-background fade-in">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 text-forest text-center">Portfolio</h2>
+      <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+        <!-- Project Card 1 -->
+        <a href="https://dannysheehan.netlify.app" target="_blank" rel="noopener" class="bg-darkgrey rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform group">
+          <img src="ddsitedisplay (2).svg" alt="Danny Sheehan Portfolio" class="w-full h-full min-h-[400px] object-cover group-hover:opacity-90 transition" loading="lazy">
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-semibold text-light mb-2">dannysheehan.netlify.app</h3>
+            <p class="text-light/80 mb-4 flex-1">Personal portfolio site for Danny Sheehan, showcasing web projects and creative work.</p>
+            <span class="text-forest font-medium mt-auto">Visit Site</span>
+          </div>
+        </a>
+        <!-- Project Card 2 -->
+        <a href="https://reesksu.netlify.app" target="_blank" rel="noopener" class="bg-darkgrey rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform group">
+          <img src="ddsitedisplay (1).svg" alt="Rees KSU" class="w-full h-full min-h-[400px] object-cover group-hover:opacity-90 transition" loading="lazy">
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-semibold text-light mb-2">reesksu.netlify.app</h3>
+            <p class="text-light/80 mb-4 flex-1">Website created for the official Real Estate and Entrepreneurship Club at Kennesaw State University.</p>
+            <span class="text-forest font-medium mt-auto">Visit Site</span>
+          </div>
+        </a>
+        <!-- Project Card 3 -->
+        <a href="https://deutschdetailing.com" target="_blank" rel="noopener" class="bg-darkgrey rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform group">
+          <img src="ddsitedisplay.svg" alt="Deutsch Detailing" class="w-full h-full min-h-[400px] object-cover group-hover:opacity-90 transition" loading="lazy">
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-semibold text-light mb-2">deutschdetailing.com</h3>
+            <p class="text-light/80 mb-4 flex-1">Professional auto detailing business site with booking and service info.</p>
+            <span class="text-forest font-medium mt-auto">Visit Site</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-[#121212] fade-in relative overflow-hidden">
+    <!-- Background Globe and Planes -->
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <!-- Globe -->
+        <svg class="w-[600px] h-[600px]" viewBox="0 0 100 100">
+          <!-- Globe Base -->
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#e34c26" stroke-width="0.5"/>
+          <!-- Latitude Lines -->
+          <path d="M5,50 A45,45 0 0,1 95,50" fill="none" stroke="#e34c26" stroke-width="0.3"/>
+          <path d="M50,5 A45,45 0 0,1 50,95" fill="none" stroke="#e34c26" stroke-width="0.3"/>
+          <path d="M20,20 A45,45 0 0,1 80,80" fill="none" stroke="#e34c26" stroke-width="0.3"/>
+          <path d="M20,80 A45,45 0 0,1 80,20" fill="none" stroke="#e34c26" stroke-width="0.3"/>
+        </svg>
+
+        <!-- Plane 1 -->
+        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-1" viewBox="0 0 24 24">
+          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
+        </svg>
+
+        <!-- Plane 2 -->
+        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-2" viewBox="0 0 24 24">
+          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
+        </svg>
+
+        <!-- Plane 3 -->
+        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-3" viewBox="0 0 24 24">
+          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-forest text-center">Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Website Builds Card -->
+        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('website-modal')">
+          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🌐</div>
+          <h3 class="text-xl font-semibold text-light mb-3">Website Builds</h3>
+          <p class="text-light/80">Custom, responsive websites for your business or brand.</p>
+        </div>
+
+        <!-- Landing Pages Card -->
+        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('landing-modal')">
+          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🎯</div>
+          <h3 class="text-xl font-semibold text-light mb-3">Landing Pages</h3>
+          <p class="text-light/80">High-converting landing pages to drive results.</p>
+        </div>
+
+        <!-- AI Automations Card -->
+        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('ai-modal')">
+          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🤖</div>
+          <h3 class="text-xl font-semibold text-light mb-3">AI Automations</h3>
+          <p class="text-light/80">Intelligent automation solutions (coming soon).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Modals -->
+    <!-- Website Builds Modal -->
+    <div id="website-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
+        <button onclick="closeModal('website-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🌐</div>
+          <h3 class="text-2xl font-bold text-light">Website Builds</h3>
+        </div>
+        <p class="text-light/80 mb-6">Custom, responsive websites for your business or brand.</p>
+        <ul class="space-y-3 text-light/90">
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Full site design & build from scratch
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Mobile-first, fast-loading pages
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            On-brand design, custom UI
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            SEO-friendly structure
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Optional CMS (WordPress or Webflow)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Landing Pages Modal -->
+    <div id="landing-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
+        <button onclick="closeModal('landing-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🎯</div>
+          <h3 class="text-2xl font-bold text-light">Landing Pages</h3>
+        </div>
+        <p class="text-light/80 mb-6">High-converting landing pages to drive results.</p>
+        <ul class="space-y-3 text-light/90">
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Single-page design focused on conversions
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            A/B testing setup (optional)
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Email signup or lead capture integration
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Built for product launches, ads, or sales
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Clean copy sections and CTAs
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI Automations Modal -->
+    <div id="ai-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
+        <button onclick="closeModal('ai-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🤖</div>
+          <h3 class="text-2xl font-bold text-light">AI Automations</h3>
+        </div>
+        <p class="text-light/80 mb-6">Intelligent automation solutions to save time and scale operations.</p>
+        <ul class="space-y-3 text-light/90">
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Tools like chatbots, email responders
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Lead qualification & CRM workflows
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Zapier / Make / OpenAI integrations
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Custom automations for repetitive tasks
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-forest">→</span>
+            Phase 1 rollout: late 2025
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-[#121212]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#228B22]">What Clients Are Saying</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">Real testimonials are coming soon as I continue working with new clients. Your project could be the next one featured here.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-darkgrey fade-in relative overflow-hidden">
+    <!-- Left Side Decoration -->
+    <div class="absolute left-0 bottom-0 w-1/3 h-full pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <!-- Mountains with Snow -->
+        <path d="M0,1000 L0,600 L200,400 L400,700 L600,300 L800,600 L1000,400 L1000,1000 Z" fill="#181c1f"/>
+        <path d="M0,1000 L0,700 L300,500 L600,800 L900,400 L1000,600 L1000,1000 Z" fill="#1a1f22"/>
+        <path d="M0,1000 L0,800 L400,600 L800,900 L1000,700 L1000,1000 Z" fill="#1d2225"/>
+        
+        <!-- Snow Caps -->
+        <path d="M200,400 L180,420 L220,420 Z" fill="white" opacity="0.8"/>
+        <path d="M400,700 L380,720 L420,720 Z" fill="white" opacity="0.8"/>
+        <path d="M600,300 L580,320 L620,320 Z" fill="white" opacity="0.8"/>
+        <path d="M800,600 L780,620 L820,620 Z" fill="white" opacity="0.8"/>
+        <path d="M300,500 L280,520 L320,520 Z" fill="white" opacity="0.8"/>
+        <path d="M600,800 L580,820 L620,820 Z" fill="white" opacity="0.8"/>
+        <path d="M900,400 L880,420 L920,420 Z" fill="white" opacity="0.8"/>
+        <path d="M400,600 L380,620 L420,620 Z" fill="white" opacity="0.8"/>
+        <path d="M800,900 L780,920 L820,920 Z" fill="white" opacity="0.8"/>
+        
+        <!-- Trees -->
+        <g transform="translate(100, 800)">
+          <path d="M0,200 L0,100 L-20,100 L0,60 L20,100 L0,100 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,120 L-20,120 L0,80 L20,120 L0,120 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,140 L-20,140 L0,100 L20,140 L0,140 Z" fill="#228B22"/>
+        </g>
+        <g transform="translate(300, 700)">
+          <path d="M0,200 L0,80 L-20,80 L0,40 L20,80 L0,80 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,100 L-20,100 L0,60 L20,100 L0,100 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,120 L-20,120 L0,80 L20,120 L0,120 Z" fill="#228B22"/>
+        </g>
+        <g transform="translate(500, 750)">
+          <path d="M0,200 L0,90 L-20,90 L0,50 L20,90 L0,90 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,110 L-20,110 L0,70 L20,110 L0,110 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,130 L-20,130 L0,90 L20,130 L0,130 Z" fill="#228B22"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Right Side Decoration -->
+    <div class="absolute right-0 bottom-0 w-1/3 h-full pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <!-- Mountains with Snow -->
+        <path d="M0,1000 L0,400 L200,600 L400,300 L600,700 L800,400 L1000,600 L1000,1000 Z" fill="#181c1f"/>
+        <path d="M0,1000 L0,600 L300,400 L600,700 L900,500 L1000,700 L1000,1000 Z" fill="#1a1f22"/>
+        <path d="M0,1000 L0,700 L400,500 L800,800 L1000,600 L1000,1000 Z" fill="#1d2225"/>
+        
+        <!-- Snow Caps -->
+        <path d="M200,600 L180,620 L220,620 Z" fill="white" opacity="0.8"/>
+        <path d="M400,300 L380,320 L420,320 Z" fill="white" opacity="0.8"/>
+        <path d="M600,700 L580,720 L620,720 Z" fill="white" opacity="0.8"/>
+        <path d="M800,400 L780,420 L820,420 Z" fill="white" opacity="0.8"/>
+        <path d="M300,400 L280,420 L320,420 Z" fill="white" opacity="0.8"/>
+        <path d="M600,700 L580,720 L620,720 Z" fill="white" opacity="0.8"/>
+        <path d="M900,500 L880,520 L920,520 Z" fill="white" opacity="0.8"/>
+        <path d="M400,500 L380,520 L420,520 Z" fill="white" opacity="0.8"/>
+        <path d="M800,800 L780,820 L820,820 Z" fill="white" opacity="0.8"/>
+        
+        <!-- Trees -->
+        <g transform="translate(100, 750)">
+          <path d="M0,200 L0,70 L-20,70 L0,30 L20,70 L0,70 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,90 L-20,90 L0,50 L20,90 L0,90 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,110 L-20,110 L0,70 L20,110 L0,110 Z" fill="#228B22"/>
+        </g>
+        <g transform="translate(300, 800)">
+          <path d="M0,200 L0,95 L-20,95 L0,55 L20,95 L0,95 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,115 L-20,115 L0,75 L20,115 L0,115 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,135 L-20,135 L0,95 L20,135 L0,135 Z" fill="#228B22"/>
+        </g>
+        <g transform="translate(500, 700)">
+          <path d="M0,200 L0,65 L-20,65 L0,25 L20,65 L0,65 Z" fill="#228B22" opacity="0.8"/>
+          <path d="M0,200 L0,85 L-20,85 L0,45 L20,85 L0,85 Z" fill="#228B22" opacity="0.9"/>
+          <path d="M0,200 L0,105 L-20,105 L0,65 L20,105 L0,105 Z" fill="#228B22"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="max-w-lg mx-auto px-4 relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-forest text-center">Contact</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <input type="hidden" name="access_key" value="4c7e694e-77f5-4937-b412-6c7f934631c1">
+        
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+          <input type="text" name="name" id="name" required
+            class="mt-1 block w-full px-4 py-3 bg-[#1a1f22] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-[#4ade80] focus:border-transparent">
+        </div>
+        
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+          <input type="email" name="email" id="email" required
+            class="mt-1 block w-full px-4 py-3 bg-[#1a1f22] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-[#4ade80] focus:border-transparent">
+        </div>
+        
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+          <textarea name="message" id="message" rows="4" required
+            class="mt-1 block w-full px-4 py-3 bg-[#1a1f22] border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-[#4ade80] focus:border-transparent"></textarea>
+        </div>
+        
+        <button type="submit"
+          class="w-full px-6 py-3 bg-[#4ade80] text-white font-medium rounded-lg hover:bg-[#3bc76a] transition-colors">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-background border-t border-darkgrey py-6 text-center text-light/60 text-sm">
+    &copy; 2025 &lt;/Nomadic Designs&gt; • 
+    <a href="privacy-policy.html" class="hover:underline text-green-500">Privacy Policy</a> • 
+    <a href="terms-of-service.html" class="hover:underline text-green-500">Terms of Service</a> • 
+    <a href="faq.html" class="hover:underline text-green-500">FAQ</a>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuBtn').onclick = function() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    };
+    // Fade-in animation on scroll
+    function onScrollFadeIn() {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+
+    // Typing animation for hero logo
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = '&lt;/Nomadic Designs&gt;';
+      const target = document.getElementById('typed-logo');
+      const cursor = document.getElementById('typed-cursor');
+      let i = 0;
+      function type() {
+        if (i <= text.length) {
+          target.innerHTML = text.slice(0, i);
+          i++;
+          setTimeout(type, 60);
+        }
+      }
+      type();
+    });
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.getElementById(modalId).classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.getElementById(modalId).classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('fixed')) {
+        event.target.classList.add('hidden');
+        event.target.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Car animation
+    const carSection = document.getElementById('car-section');
+    const car = carSection.querySelector('.car');
+    
+    function updateCarPosition() {
+      const rect = carSection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate how far through the section we are (0 to 1)
+      const startTrigger = viewportHeight * 0.8; // Start when section is 80% from top
+      const endTrigger = -rect.height; // End when section is completely out of view
+      const totalDistance = startTrigger - endTrigger;
+      
+      const currentPosition = startTrigger - rect.top;
+      const progress = Math.min(Math.max(currentPosition / totalDistance, 0), 1);
+      
+      // Calculate car position (from -50% to 150%)
+      const carPosition = -50 + (progress * 200); // -50% to 150%
+      car.style.transform = `translateX(${carPosition}%)`;
+    }
+
+    // Update on scroll
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateCarPosition);
+    });
+
+    // Initial position
+    updateCarPosition();
+  </script>
+</body>
+</html> 
