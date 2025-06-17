@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nomadic Designs | Web. Automation. Anywhere.</title>
   <meta name="description" content="Nomadic Designs: Web, Automation, and AI solutions for small businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -13,23 +15,39 @@
         extend: {
           colors: {
             background: '#121212',
-            forest: '#228B22',
-            accent: '#4ADE80',
-            light: '#F3F4F6',
+            forest: '#4CAF50',
+            accent: '#81C784',
+            light: '#F0F0F0',
             darkgrey: '#23272A',
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+          },
+          screens: {
+            'xs': '475px',
           },
         },
       },
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    html { 
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body { 
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(24px); 
+      transition: opacity 0.7s, transform 0.7s; 
+    }
+    .fade-in.visible { 
+      opacity: 1; 
+      transform: none; 
+    }
     .logo-code {
       font-family: 'Fira Mono', 'Menlo', 'monospace';
       color: #e34c26;
@@ -96,63 +114,86 @@
       min-height: 16rem;
       position: relative;
     }
+    @media (max-width: 640px) {
+      .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    /* Optimize video loading */
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    /* Improve touch targets on mobile */
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.75rem 0;
+      }
+      .mobile-menu-item {
+        padding: 0.75rem 0;
+        font-size: 1.125rem;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="white"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Fira Mono, Menlo, monospace" font-size="28" fill="%23e34c26" font-weight="bold" >&lt;/ND&gt;</text></svg>' />
 </head>
 <body class="bg-background text-light min-h-screen">
   <!-- Navbar -->
   <nav class="fixed w-full z-50 bg-background/80 backdrop-blur border-b border-darkgrey">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#hero" class="logo-code text-2xl font-bold tracking-tight">&lt;/Nomadic Designs&gt;</a>
-      <div class="hidden md:flex gap-8 text-light font-medium">
-        <a href="#about" class="text-white hover:text-[#e34c26] transition-colors">About</a>
-        <a href="#portfolio" class="text-white hover:text-[#e34c26] transition-colors">Portfolio</a>
-        <a href="#services" class="hover:text-forest transition">Services</a>
-        <a href="#testimonials" class="text-white hover:text-[#e34c26] transition-colors">Testimonials</a>
-        <a href="#contact" class="text-white hover:text-[#e34c26] transition-colors">Contact</a>
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+      <a href="#hero" class="logo-code text-xl sm:text-2xl font-bold tracking-tight">&lt;/Nomadic Designs&gt;</a>
+      <div class="hidden md:flex gap-6 lg:gap-8 text-light font-medium">
+        <a href="#about" class="text-white hover:text-[#e34c26] transition-colors nav-link">About</a>
+        <a href="#portfolio" class="text-white hover:text-[#e34c26] transition-colors nav-link">Portfolio</a>
+        <a href="#services" class="text-white hover:text-[#e34c26] transition-colors nav-link">Services</a>
+        <a href="blog.html" class="text-white hover:text-[#e34c26] transition-colors nav-link">Blog</a>
+        <a href="#contact" class="text-white hover:text-[#e34c26] transition-colors nav-link">Contact</a>
       </div>
-      <button id="menuBtn" class="md:hidden text-light focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <button id="menuBtn" class="md:hidden text-light focus:outline-none p-2" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden flex-col gap-4 px-6 pb-4 bg-background">
-      <a href="#about" class="block py-2 hover:text-forest transition">About</a>
-      <a href="#portfolio" class="block py-2 hover:text-forest transition">Work</a>
-      <a href="#services" class="block py-2 hover:text-forest transition">Services</a>
-      <a href="#testimonials" class="block py-2 hover:text-forest transition">Testimonials</a>
-      <a href="#contact" class="block py-2 hover:text-forest transition">Contact</a>
+    <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 sm:px-6 pb-4 bg-background">
+      <a href="#about" class="mobile-menu-item hover:text-forest transition">About</a>
+      <a href="#portfolio" class="mobile-menu-item hover:text-forest transition">Work</a>
+      <a href="#services" class="mobile-menu-item hover:text-forest transition">Services</a>
+      <a href="blog.html" class="mobile-menu-item hover:text-forest transition">Blog</a>
+      <a href="#contact" class="mobile-menu-item hover:text-forest transition">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center">
-    <video class="absolute inset-0 w-full h-full object-cover" src="tandm.mp4" autoplay loop muted playsinline></video>
+    <video class="absolute inset-0 w-full h-full object-cover" src="tandm.mp4" autoplay loop muted playsinline preload="auto"></video>
     <div class="absolute inset-0 bg-background/80"></div>
-    <div class="relative z-10 text-center max-w-2xl mx-auto px-4 fade-in">
-      <h1 class="logo-code text-4xl md:text-6xl font-bold mb-6"><span id="typed-logo"></span><span class="typed-cursor" id="typed-cursor"></span></h1>
-      <p class="text-xl md:text-2xl text-forest mb-8 font-light">Web. Automation. Anywhere.</p>
-      <a href="#contact" class="inline-block px-8 py-3 bg-forest text-white rounded-lg font-semibold shadow-lg hover:bg-accent transition">Start Journey</a>
+    <div class="relative z-10 text-center max-w-2xl mx-auto px-4 sm:px-6 fade-in">
+      <h1 class="logo-code text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6"><span id="typed-logo"></span><span class="typed-cursor" id="typed-cursor"></span></h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 font-light">Web. Automation. Anywhere.</p>
+      <a href="#contact" class="inline-block px-6 sm:px-8 py-3 bg-forest text-white rounded-lg font-semibold shadow-lg hover:bg-accent transition">Start Journey</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-24 bg-[#181c1f] fade-in">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4">
+  <section id="about" class="py-16 sm:py-24 bg-[#181c1f] fade-in">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-10 px-4 sm:px-6">
       <!-- Photo/Icon -->
-      <div class="flex-shrink-0 w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg border-4 border-forest bg-darkgrey flex items-center justify-center">
+      <div class="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg border-4 border-forest bg-darkgrey flex items-center justify-center">
         <div class="flex flex-col items-center">
-          <div class="relative w-48 h-48 mb-6">
-            <div class="absolute inset-0 bg-[#e34c26] rounded-full transform rotate-3"></div>
+          <div class="relative w-full h-full">
             <a href="https://www.linkedin.com/in/dannysheehan-/" target="_blank" rel="noopener noreferrer">
-              <img src="my-notion-face-portrait (1).png" alt="Danny Sheehan" class="relative w-full h-full object-cover rounded-full border-4 border-white">
+              <img src="my-notion-face-portrait (1).png" alt="Danny Sheehan" class="w-full h-full object-cover">
             </a>
           </div>
         </div>
       </div>
       <!-- Card/Text -->
-      <div class="flex-1 bg-darkgrey rounded-2xl shadow-xl border-l-4 border-forest p-8 md:ml-[-2rem] relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-forest">About</h2>
-        <p class="text-lg text-light mb-2">&lt;/Nomadic Designs&gt; is dedicated to helping small businesses thrive online with modern websites, high-converting landing pages, and AI-powered solutions. My mission is to empower entrepreneurs to grow and automate, wherever they are in the world.</p>
+      <div class="flex-1 bg-darkgrey rounded-2xl shadow-xl border-l-4 border-forest p-6 sm:p-8 md:ml-[-2rem] relative z-10">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">About</h2>
+        <p class="text-base sm:text-lg text-light mb-4">&lt;/Nomadic Designs&gt; is a solo-built studio committed to helping small businesses thrive online.</p>
+        <p class="text-base sm:text-lg text-light mb-4">Through custom websites, high-converting landing pages, and smart automation tools powered by Artificial Intelligence (AI), I give entrepreneurs the digital edge to grow from anywhere in the world.</p>
+        <p class="text-base sm:text-lg text-light">Driven by a passion for design and tech, Nomadic Designs equips business owners with everything they need to stand out, no matter their size or industry. A modern website isn't just a digital business card,it's a responsive, fast-loading, branded experience that's built to convert, easy to navigate, and accessible to everyone.</p>
       </div>
     </div>
   </section>
@@ -290,176 +331,25 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-20 bg-[#121212] fade-in relative overflow-hidden">
-    <!-- Background Globe and Planes -->
-    <div class="absolute inset-0 pointer-events-none opacity-10">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <!-- Globe -->
-        <svg class="w-[600px] h-[600px]" viewBox="0 0 100 100">
-          <!-- Globe Base -->
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#e34c26" stroke-width="0.5"/>
-          <!-- Latitude Lines -->
-          <path d="M5,50 A45,45 0 0,1 95,50" fill="none" stroke="#e34c26" stroke-width="0.3"/>
-          <path d="M50,5 A45,45 0 0,1 50,95" fill="none" stroke="#e34c26" stroke-width="0.3"/>
-          <path d="M20,20 A45,45 0 0,1 80,80" fill="none" stroke="#e34c26" stroke-width="0.3"/>
-          <path d="M20,80 A45,45 0 0,1 80,20" fill="none" stroke="#e34c26" stroke-width="0.3"/>
-        </svg>
-
-        <!-- Plane 1 -->
-        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-1" viewBox="0 0 24 24">
-          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
-        </svg>
-
-        <!-- Plane 2 -->
-        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-2" viewBox="0 0 24 24">
-          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
-        </svg>
-
-        <!-- Plane 3 -->
-        <svg class="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 animate-plane-3" viewBox="0 0 24 24">
-          <path d="M22,16.92v3a2,2 0 0,1-2.18,2 19.79,19.79 0 0,1-8.63-3.07 19.5,19.5 0 0,1-6-6 19.79,19.79 0 0,1-3.07-8.67A2,2 0 0,1 4.11,2h3a2,2 0 0,1 2,1.72 12.84,12.84 0 0,0 .7,2.81 2,2 0 0,1-.45 2.11L8.09,9.91a16,16 0 0,0 6,6l1.27-1.27a2,2 0 0,1 2.11-.45 12.84,12.84 0 0,0 2.81.7A2,2 0 0,1 22,16.92z" fill="#e34c26"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-4 relative z-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-forest text-center">Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Website Builds Card -->
-        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('website-modal')">
-          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🌐</div>
-          <h3 class="text-xl font-semibold text-light mb-3">Website Builds</h3>
-          <p class="text-light/80">Custom, responsive websites for your business or brand.</p>
+  <section id="services" class="py-24 bg-background fade-in">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-darkgrey rounded-2xl p-8 border-l-4 border-forest">
+          <h3 class="text-2xl font-bold mb-4 text-white">Web Development</h3>
+          <p class="text-light mb-4">Custom and responsive websites for your business or brand. Built with modern technologies for optimal performance and user experience.</p>
+          <p class="text-light text-sm italic">Estimates available upon request. Pricing may vary based on project size and complexity.</p>
         </div>
-
-        <!-- Landing Pages Card -->
-        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('landing-modal')">
-          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🎯</div>
-          <h3 class="text-xl font-semibold text-light mb-3">Landing Pages</h3>
-          <p class="text-light/80">High-converting landing pages to drive results.</p>
+        <div class="bg-darkgrey rounded-2xl p-8 border-l-4 border-forest">
+          <h3 class="text-2xl font-bold mb-4 text-white">Automation</h3>
+          <p class="text-light mb-4">Streamline your business operations with custom automation solutions. From Customer Relationship Management (CRM) to workflow automation.</p>
+          <p class="text-light text-sm italic">Estimates available upon request. Pricing may vary based on project size and complexity.</p>
         </div>
-
-        <!-- AI Automations Card -->
-        <div class="bg-darkgrey rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openModal('ai-modal')">
-          <div class="bg-forest/20 text-forest rounded-full w-20 h-20 flex items-center justify-center mb-6 text-4xl">🤖</div>
-          <h3 class="text-xl font-semibold text-light mb-3">AI Automations</h3>
-          <p class="text-light/80">Intelligent automation solutions (coming soon).</p>
+        <div class="bg-darkgrey rounded-2xl p-8 border-l-4 border-forest">
+          <h3 class="text-2xl font-bold mb-4 text-white">Search Engine Optimization (SEO)</h3>
+          <p class="text-light mb-4">Improve your online visibility and reach more customers with our comprehensive SEO services.</p>
+          <p class="text-light text-sm italic">Estimates available upon request. Pricing may vary based on project size and complexity.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- Service Modals -->
-    <!-- Website Builds Modal -->
-    <div id="website-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
-        <button onclick="closeModal('website-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🌐</div>
-          <h3 class="text-2xl font-bold text-light">Website Builds</h3>
-        </div>
-        <p class="text-light/80 mb-6">Custom, responsive websites for your business or brand.</p>
-        <ul class="space-y-3 text-light/90">
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Full site design & build from scratch
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Mobile-first, fast-loading pages
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            On-brand design, custom UI
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            SEO-friendly structure
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Optional CMS (WordPress or Webflow)
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Landing Pages Modal -->
-    <div id="landing-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
-        <button onclick="closeModal('landing-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🎯</div>
-          <h3 class="text-2xl font-bold text-light">Landing Pages</h3>
-        </div>
-        <p class="text-light/80 mb-6">High-converting landing pages to drive results.</p>
-        <ul class="space-y-3 text-light/90">
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Single-page design focused on conversions
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            A/B testing setup (optional)
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Email signup or lead capture integration
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Built for product launches, ads, or sales
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Clean copy sections and CTAs
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- AI Automations Modal -->
-    <div id="ai-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <div class="bg-darkgrey rounded-xl p-8 max-w-2xl mx-4 relative">
-        <button onclick="closeModal('ai-modal')" class="absolute top-4 right-4 text-light hover:text-forest transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="bg-forest/20 text-forest rounded-full w-16 h-16 flex items-center justify-center text-3xl">🤖</div>
-          <h3 class="text-2xl font-bold text-light">AI Automations</h3>
-        </div>
-        <p class="text-light/80 mb-6">Intelligent automation solutions to save time and scale operations.</p>
-        <ul class="space-y-3 text-light/90">
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Tools like chatbots, email responders
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Lead qualification & CRM workflows
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Zapier / Make / OpenAI integrations
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Custom automations for repetitive tasks
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-forest">→</span>
-            Phase 1 rollout: late 2025
-          </li>
-        </ul>
       </div>
     </div>
   </section>
@@ -473,85 +363,11 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-darkgrey fade-in relative overflow-hidden">
-    <!-- Left Side Decoration -->
-    <div class="absolute left-0 bottom-0 w-1/3 h-full pointer-events-none">
-      <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <!-- Mountains with Snow -->
-        <path d="M0,1000 L0,600 L200,400 L400,700 L600,300 L800,600 L1000,400 L1000,1000 Z" fill="#181c1f"/>
-        <path d="M0,1000 L0,700 L300,500 L600,800 L900,400 L1000,600 L1000,1000 Z" fill="#1a1f22"/>
-        <path d="M0,1000 L0,800 L400,600 L800,900 L1000,700 L1000,1000 Z" fill="#1d2225"/>
-        
-        <!-- Snow Caps -->
-        <path d="M200,400 L180,420 L220,420 Z" fill="white" opacity="0.8"/>
-        <path d="M400,700 L380,720 L420,720 Z" fill="white" opacity="0.8"/>
-        <path d="M600,300 L580,320 L620,320 Z" fill="white" opacity="0.8"/>
-        <path d="M800,600 L780,620 L820,620 Z" fill="white" opacity="0.8"/>
-        <path d="M300,500 L280,520 L320,520 Z" fill="white" opacity="0.8"/>
-        <path d="M600,800 L580,820 L620,820 Z" fill="white" opacity="0.8"/>
-        <path d="M900,400 L880,420 L920,420 Z" fill="white" opacity="0.8"/>
-        <path d="M400,600 L380,620 L420,620 Z" fill="white" opacity="0.8"/>
-        <path d="M800,900 L780,920 L820,920 Z" fill="white" opacity="0.8"/>
-        
-        <!-- Trees -->
-        <g transform="translate(100, 800)">
-          <path d="M0,200 L0,100 L-20,100 L0,60 L20,100 L0,100 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,120 L-20,120 L0,80 L20,120 L0,120 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,140 L-20,140 L0,100 L20,140 L0,140 Z" fill="#228B22"/>
-        </g>
-        <g transform="translate(300, 700)">
-          <path d="M0,200 L0,80 L-20,80 L0,40 L20,80 L0,80 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,100 L-20,100 L0,60 L20,100 L0,100 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,120 L-20,120 L0,80 L20,120 L0,120 Z" fill="#228B22"/>
-        </g>
-        <g transform="translate(500, 750)">
-          <path d="M0,200 L0,90 L-20,90 L0,50 L20,90 L0,90 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,110 L-20,110 L0,70 L20,110 L0,110 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,130 L-20,130 L0,90 L20,130 L0,130 Z" fill="#228B22"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Right Side Decoration -->
-    <div class="absolute right-0 bottom-0 w-1/3 h-full pointer-events-none">
-      <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <!-- Mountains with Snow -->
-        <path d="M0,1000 L0,400 L200,600 L400,300 L600,700 L800,400 L1000,600 L1000,1000 Z" fill="#181c1f"/>
-        <path d="M0,1000 L0,600 L300,400 L600,700 L900,500 L1000,700 L1000,1000 Z" fill="#1a1f22"/>
-        <path d="M0,1000 L0,700 L400,500 L800,800 L1000,600 L1000,1000 Z" fill="#1d2225"/>
-        
-        <!-- Snow Caps -->
-        <path d="M200,600 L180,620 L220,620 Z" fill="white" opacity="0.8"/>
-        <path d="M400,300 L380,320 L420,320 Z" fill="white" opacity="0.8"/>
-        <path d="M600,700 L580,720 L620,720 Z" fill="white" opacity="0.8"/>
-        <path d="M800,400 L780,420 L820,420 Z" fill="white" opacity="0.8"/>
-        <path d="M300,400 L280,420 L320,420 Z" fill="white" opacity="0.8"/>
-        <path d="M600,700 L580,720 L620,720 Z" fill="white" opacity="0.8"/>
-        <path d="M900,500 L880,520 L920,520 Z" fill="white" opacity="0.8"/>
-        <path d="M400,500 L380,520 L420,520 Z" fill="white" opacity="0.8"/>
-        <path d="M800,800 L780,820 L820,820 Z" fill="white" opacity="0.8"/>
-        
-        <!-- Trees -->
-        <g transform="translate(100, 750)">
-          <path d="M0,200 L0,70 L-20,70 L0,30 L20,70 L0,70 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,90 L-20,90 L0,50 L20,90 L0,90 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,110 L-20,110 L0,70 L20,110 L0,110 Z" fill="#228B22"/>
-        </g>
-        <g transform="translate(300, 800)">
-          <path d="M0,200 L0,95 L-20,95 L0,55 L20,95 L0,95 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,115 L-20,115 L0,75 L20,115 L0,115 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,135 L-20,135 L0,95 L20,135 L0,135 Z" fill="#228B22"/>
-        </g>
-        <g transform="translate(500, 700)">
-          <path d="M0,200 L0,65 L-20,65 L0,25 L20,65 L0,65 Z" fill="#228B22" opacity="0.8"/>
-          <path d="M0,200 L0,85 L-20,85 L0,45 L20,85 L0,85 Z" fill="#228B22" opacity="0.9"/>
-          <path d="M0,200 L0,105 L-20,105 L0,65 L20,105 L0,105 Z" fill="#228B22"/>
-        </g>
-      </svg>
-    </div>
-
-    <div class="max-w-lg mx-auto px-4 relative z-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-forest text-center">Contact</h2>
+  <section id="contact" class="py-24 bg-[#181c1f] fade-in">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Contact</h2>
+      <p class="text-xl text-light mb-8">Have a project in mind? Ask questions about specific services or schedule a consultation. I usually respond within 24 hours.</p>
+      <p class="text-lg text-light mb-8">Reach out for a quote.</p>
       <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
         <input type="hidden" name="access_key" value="4c7e694e-77f5-4937-b412-6c7f934631c1">
         

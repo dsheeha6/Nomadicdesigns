@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Every Small Business Needs a Custom Website in 2025 | Nomadic Designs</title>
+  <meta name="description" content="Learn why custom websites are essential for small businesses in 2025 and how they can help you stand out in the digital landscape.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#121212',
+            forest: '#4CAF50',
+            accent: '#81C784',
+            light: '#F0F0F0',
+            darkgrey: '#23272A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          screens: {
+            'xs': '475px',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { 
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body { 
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(24px); 
+      transition: opacity 0.7s, transform 0.7s; 
+    }
+    .fade-in.visible { 
+      opacity: 1; 
+      transform: none; 
+    }
+    .logo-code {
+      font-family: 'Fira Mono', 'Menlo', 'monospace';
+      color: #e34c26;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 640px) {
+      .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    /* Improve touch targets on mobile */
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.75rem 0;
+      }
+      .mobile-menu-item {
+        padding: 0.75rem 0;
+        font-size: 1.125rem;
+      }
+    }
+    /* Optimize images */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="white"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Fira Mono, Menlo, monospace" font-size="28" fill="%23e34c26" font-weight="bold" >&lt;/ND&gt;</text></svg>' />
+</head>
+<body class="bg-background text-light min-h-screen">
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 bg-background/80 backdrop-blur border-b border-darkgrey">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+      <a href="index.html" class="logo-code text-xl sm:text-2xl font-bold tracking-tight">&lt;/Nomadic Designs&gt;</a>
+      <div class="hidden md:flex gap-6 lg:gap-8 text-light font-medium">
+        <a href="index.html#about" class="text-white hover:text-[#e34c26] transition-colors nav-link">About</a>
+        <a href="index.html#portfolio" class="text-white hover:text-[#e34c26] transition-colors nav-link">Portfolio</a>
+        <a href="index.html#services" class="text-white hover:text-[#e34c26] transition-colors nav-link">Services</a>
+        <a href="blog.html" class="text-forest">Blog</a>
+        <a href="index.html#contact" class="text-white hover:text-[#e34c26] transition-colors nav-link">Contact</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-light focus:outline-none p-2" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden flex-col gap-2 px-4 sm:px-6 pb-4 bg-background">
+      <a href="index.html#about" class="mobile-menu-item hover:text-forest transition">About</a>
+      <a href="index.html#portfolio" class="mobile-menu-item hover:text-forest transition">Work</a>
+      <a href="index.html#services" class="mobile-menu-item hover:text-forest transition">Services</a>
+      <a href="blog.html" class="mobile-menu-item text-forest">Blog</a>
+      <a href="index.html#contact" class="mobile-menu-item hover:text-forest transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Blog Post Content -->
+  <main class="pt-24 sm:pt-32 pb-12 sm:pb-16">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="mb-8">
+        <a href="blog.html" class="inline-flex items-center text-forest hover:text-accent transition mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Back to Blog
+        </a>
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">Why Every Small Business Needs a Custom Website in 2025</h1>
+          <div class="flex items-center gap-4 text-light/60 mb-8">
+            <span>June 17, 2024</span>
+            <span>•</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose prose-invert max-w-none">
+        <p class="text-lg text-light mb-6">In a world where nearly every customer checks a brand online before buying, having a strong digital presence isn't optional — it's essential. At Nomadic Designs, we help entrepreneurs bring their businesses to life online through custom websites, conversion-focused landing pages, and SEO optimization.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-white">Why Custom > Templates</h2>
+        <p class="text-light mb-6">While platforms like Wix or Squarespace are popular, they often box you into cookie-cutter templates. A custom-built site is designed around your brand, your goals, and your customer journey — which means higher trust, better performance, and more conversions.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-white">Key Benefits of Custom Web Design</h2>
+        <ul class="list-disc list-inside text-light mb-6 space-y-2">
+          <li>Responsive design across all devices</li>
+          <li>Fast loading times = better user experience</li>
+          <li>Built-in SEO structure</li>
+          <li>Designed with your brand voice and vision</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-white">What We Offer at Nomadic Designs</h2>
+        <ul class="list-disc list-inside text-light mb-6 space-y-2">
+          <li>Full website builds</li>
+          <li>Landing pages designed for conversions</li>
+          <li>Website updates and modernizations</li>
+          <li>SEO tune-ups to boost search engine visibility</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-white">Recommended Reading</h2>
+        <h3 class="text-lg sm:text-xl font-bold mb-3 text-white">Recommended Reading:</h3>
+        <ul class="list-disc list-inside text-light">
+          <li><a href="https://blog.hubspot.com/website/custom-web-design" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-accent transition">Hubspot: Why Custom Web Design is Worth the Investment</a></li>
+          <li><a href="https://www.forbes.com/councils/forbestechcouncil/2025/06/17/building-ai-native-fintechs-how-startups-are-winning-at-machine-speed/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-accent transition">Forbes: Building AI-Native Fintechs: How Startups Are Winning At Machine Speed</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#181c1f] py-8 sm:py-12 mt-12 sm:mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="index.html" class="logo-code text-xl sm:text-2xl font-bold tracking-tight">&lt;/Nomadic Designs&gt;</a>
+          <p class="text-sm sm:text-base text-light/60 mt-2">Web. Automation. Anywhere.</p>
+        </div>
+        <div class="flex gap-6 sm:gap-8">
+          <a href="privacy-policy.html" class="text-sm sm:text-base text-light/60 hover:text-light transition">Privacy</a>
+          <a href="terms-of-service.html" class="text-sm sm:text-base text-light/60 hover:text-light transition">Terms</a>
+          <a href="faq.html" class="text-sm sm:text-base text-light/60 hover:text-light transition">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html> 
