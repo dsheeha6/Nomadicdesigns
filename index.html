@@ -407,6 +407,48 @@
     <a href="faq.html" class="hover:underline text-green-500">FAQ</a>
   </footer>
 
+  <!-- Botpress Webchat Floating Button -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script>
+    window.botpress.init({
+      "botId": "1dca80f8-c530-454d-a558-d278d8cb831e",
+      "clientId": "619b1596-9e4e-47cf-b7f8-38f4977cc585",
+      "configuration": {
+        "version": "v1",
+        "botName": "Nomad",
+        "botDescription": "",
+        "website": {
+          "title": "https://nomadicdesigns.us/",
+          "link": "https://nomadicdesigns.us/"
+        },
+        "email": {
+          "title": "daniel.sheehan03@gmail.com",
+          "link": "daniel.sheehan03@gmail.com"
+        },
+        "phone": {
+          "title": "7706953811",
+          "link": "7706953811"
+        },
+        "termsOfService": {
+          "title": "Terms of service",
+          "link": "https://nomadicdesigns.us/terms-of-service"
+        },
+        "privacyPolicy": {
+          "title": "Privacy policy",
+          "link": "https://nomadicdesigns.us/privacy-policy"
+        },
+        "color": "#3276EA",
+        "variant": "solid",
+        "headerVariant": "solid",
+        "themeMode": "dark",
+        "fontFamily": "inter",
+        "radius": 4,
+        "feedbackEnabled": true,
+        "footer": "[âš¡ by Botpress](https://botpress.com/?from=webchat)",
+        "allowFileUpload": false
+      }
+    });
+  </script>
   <script>
     // Mobile menu toggle
     document.getElementById('menuBtn').onclick = function() {
