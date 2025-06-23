@@ -181,6 +181,26 @@
     </div>
   </footer>
 
+  <!-- Sticky Bottom Banner -->
+  <div id="auditBanner" class="fixed bottom-0 left-0 right-0 bg-[#121212] border-t border-gray-700 z-40 transform translate-y-full transition-transform duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <span class="text-white text-sm sm:text-base font-medium">Get a free audit of your website →</span>
+          <a href="https://ndlandingpage.netlify.app/" target="_blank" rel="noopener noreferrer" 
+             class="bg-[#1DB954] hover:bg-[#1ed760] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap">
+            Request Now
+          </a>
+        </div>
+        <button id="closeBanner" class="text-gray-400 hover:text-white transition-colors p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
@@ -206,6 +226,25 @@
     }, observerOptions);
 
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    // Sticky Bottom Banner Functionality
+    const banner = document.getElementById('auditBanner');
+    const closeBannerBtn = document.getElementById('closeBanner');
+
+    // Show banner after 7 seconds
+    setTimeout(() => {
+      banner.classList.remove('translate-y-full');
+      banner.classList.add('translate-y-0');
+    }, 7000);
+
+    // Close banner function
+    function closeBanner() {
+      banner.classList.add('translate-y-full');
+      banner.classList.remove('translate-y-0');
+    }
+
+    // Close on X button click
+    closeBannerBtn.addEventListener('click', closeBanner);
   </script>
 </body>
 </html> 
