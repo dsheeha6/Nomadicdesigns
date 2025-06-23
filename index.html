@@ -417,6 +417,33 @@
     <a href="faq.html" class="hover:underline text-green-500">FAQ</a>
   </footer>
 
+  <!-- Popup Modal -->
+  <div id="auditModal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative flex items-center justify-center min-h-screen p-4">
+      <div class="bg-darkgrey rounded-2xl shadow-2xl max-w-md w-full mx-4 relative border border-gray-700">
+        <!-- Close Button -->
+        <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <!-- Modal Body -->
+        <div class="p-8 text-center">
+          <h3 class="text-2xl font-bold text-white mb-6">Get a Free Audit of Your Website</h3>
+          <a href="https://ndlandingpage.netlify.app/" target="_blank" rel="noopener noreferrer" 
+             class="inline-block px-8 py-3 bg-[#1DB954] text-white font-semibold rounded-lg hover:bg-[#1ed760] transition-colors shadow-lg">
+            Click Here
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Botpress Webchat Floating Button -->
   <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
   <script>
@@ -543,6 +570,36 @@
 
     // Initial position
     updateCarPosition();
+
+    // Popup Modal Functionality
+    const modal = document.getElementById('auditModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const backdrop = modal.querySelector('.bg-black');
+
+    // Show modal after a short delay
+    setTimeout(() => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }, 2000); // Show after 2 seconds
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close on X button click
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close on backdrop click
+    backdrop.addEventListener('click', closeModal);
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html> 
