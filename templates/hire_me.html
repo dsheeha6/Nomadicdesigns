@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Hire Danny — Portfolio for Employers{% endblock %}
+{% block description %}Designer, Builder, Operator — I ship clean, conversion-focused websites and lightweight automations.{% endblock %}
+
+{% block content %}
+<main class="hire-page">
+  <div class="container">
+    <!-- Intro -->
+    <section class="hire-intro">
+      <h1 class="h1">{{ data.intro.headline }}</h1>
+      <p class="hire-subhead">{{ data.intro.subhead }}</p>
+      <p class="hire-meta">{{ data.intro.location }}</p>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="hire-section">
+      <h2 class="h2">Selected Work</h2>
+      <div class="hire-grid">
+        {% for w in data.work %}
+        <article class="hire-card">
+          <h3 class="h3">{{ w.title or w.value }}</h3>
+          <p class="hire-card-text">{{ w.summary or "" }}</p>
+          {% set tags = (w.tags or "").split("|") %}
+          <div class="hire-tags">
+            {% for t in tags %}{% if t %}<span class="hire-tag">{{ t }}</span>{% endif %}{% endfor %}
+          </div>
+          {% if w.link %}<a class="hire-link" href="{{ w.link }}">View case</a>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Personal Projects -->
+    <section class="hire-section">
+      <h2 class="h2">Personal Projects</h2>
+      <div class="hire-grid">
+        {% for p in data.projects %}
+        <article class="hire-card">
+          <h3 class="h3">{{ p.title or p.value }}</h3>
+          <p class="hire-card-text">{{ p.summary or "" }}</p>
+          {% set ptags = (p.tags or "").split("|") %}
+          <div class="hire-tags">
+            {% for t in ptags %}{% if t %}<span class="hire-tag">{{ t }}</span>{% endif %}{% endfor %}
+          </div>
+          {% if p.link %}<a class="hire-link" href="{{ p.link }}">Details</a>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Skills Snapshot -->
+    <section class="hire-section">
+      <h2 class="h2">Skills Snapshot</h2>
+      <div class="hire-tags">
+        {% for s in data.skills %}<span class="hire-tag">{{ s }}</span>{% endfor %}
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="hire-section">
+      <h2 class="h2">Experience</h2>
+      <div class="hire-timeline">
+        {% for e in data.experience %}
+        <article class="hire-card">
+          <h3 class="h3">{{ e.role or e.value }}</h3>
+          <p class="hire-meta">{{ e.dates }}</p>
+          {% set bullets = (e.bullets or "").split("|") %}
+          <ul class="hire-bullets">
+            {% for b in bullets %}{% if b %}<li>{{ b }}</li>{% endif %}{% endfor %}
+          </ul>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Currently Learning -->
+    <section class="hire-section">
+      <h2 class="h2">Currently Learning</h2>
+      <div class="hire-tags">
+        {% for l in data.learning %}<span class="hire-tag">{{ l }}</span>{% endfor %}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="hire-section hire-cta-footer">
+      <a class="hire-link" href="{{ data.cta.resumeUrl }}" target="_blank" rel="noopener">Download Resume</a>
+      <a class="btn btn-primary" href="{{ data.cta.cal }}" target="_blank" rel="noopener">Book a Call</a>
+      <a class="btn btn-outline" href="mailto:{{ data.cta.email }}">Email Me</a>
+    </section>
+  </div>
+</main>
+{% endblock %}
+

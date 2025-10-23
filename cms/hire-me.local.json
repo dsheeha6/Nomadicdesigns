@@ -1,0 +1,73 @@
+{
+  "intro": {
+    "headline": "Designer, Builder, Operator",
+    "subhead": "I build clean, conversion-focused websites and lightweight automations — now growing my data toolkit.",
+    "location": "Atlanta, GA — open to remote"
+  },
+  "work": [
+    {
+      "title": "Nomadic Designs — SMB Web Sprint",
+      "summary": "Designed, built, and shipped 5+ client sites with fast, accessible UX, basic SEO, and QA flows.",
+      "tags": "Web Design|SEO|QA|Client Delivery",
+      "link": "/portfolio/nomadic-designs"
+    }
+  ],
+  "projects": [
+    {
+      "title": "PromptPilot",
+      "summary": "Prompt management & optimizer concept — streamlined prompt libraries and versioning for builders.",
+      "tags": "Product Concept|UI/UX|Automation",
+      "link": "/portfolio/promptpilot"
+    },
+    {
+      "title": "Savu",
+      "summary": "Sauna/cold plunge timer with streaks and social — web+mobile concept with simple habit loops.",
+      "tags": "Web App|Mobile Concept|Health",
+      "link": "/portfolio/savu"
+    },
+    {
+      "title": "RealityCheck",
+      "summary": "Focus/productivity tracker prototype — light analytics and session scoring to reduce phone time.",
+      "tags": "Productivity|Web App|Analytics",
+      "link": "/portfolio/realitycheck"
+    },
+    {
+      "title": "Missed2Booked",
+      "summary": "Micro-SaaS callback + text-back workflow for service businesses to capture missed calls and auto-qualify leads.",
+      "tags": "SaaS|Automations|Lead Capture",
+      "link": "/portfolio/missed2booked"
+    }
+  ],
+  "skills": [
+    "HTML","CSS","JavaScript","Python (Flask, in progress)",
+    "Web Design (UX/UI)","SEO Basics","QA & Regression Checklists",
+    "Make.com Automations","Telnyx/Twilio (basic)","GA4 Basics",
+    "Figma/Cursor","Client Discovery & Scoping"
+  ],
+  "experience": [
+    {
+      "role": "Founder — Nomadic Designs",
+      "dates": "2024—present",
+      "bullets": "Shipped 5+ client sites|Set up QA & accessibility checks|Implemented lightweight automations"
+    },
+    {
+      "role": "Co-Founder — Deutsch Detailing",
+      "dates": "2024—2025",
+      "bullets": "Launched local SMB brand & site|CRM + booking flow|Marketing ops & social"
+    },
+    {
+      "role": "Digital Marketing Consultant",
+      "dates": "2023—2024",
+      "bullets": "Lead capture funnels|Content & blogs|SEO & newsletters"
+    }
+  ],
+  "learning": [
+    "Tableau (dashboards & viz)",
+    "Excel/Google Sheets (analysis)",
+    "SQL basics (SELECT/JOIN/GROUP)",
+    "Python/pandas (data prep)",
+    "A/B testing basics",
+    "Accessibility (WCAG AA)"
+  ],
+  "cta": { "resumeUrl": "/static/assets/dannysheehanresume.pdf", "email": "daniel.sheehan03@gmail.com", "cal": "https://calendar.app.google/Ep6i3vsvQ4erc6229" }
+}

@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+{% block title %}Nomadic Designs | Web. Automation. Anywhere.{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <video class="hero-video" src="{{ url_for('static', filename='tandm.mp4') }}" autoplay loop muted playsinline preload="auto"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <h1 class="logo-code hero-title">
+        <span id="typed-logo"></span><span class="typed-cursor" id="typed-cursor"></span>
+      </h1>
+      <p class="hero-subtitle">Web. Automation. Anywhere.</p>
+      <div class="cta-row">
+        <a href="/#contact" class="btn btn-primary" data-cta="start_journey">Start Journey</a>
+        <a href="/hire-me" class="btn btn-outline" aria-label="Hire Danny" data-cta="hire_me">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section fade-in">
+    <div class="about-container">
+      <div class="about-image-wrapper">
+        <div class="about-image">
+          <a href="https://www.linkedin.com/in/dannysheehan-/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='my-notion-face-portrait (1).png') }}" alt="Danny Sheehan" loading="lazy">
+          </a>
+        </div>
+      </div>
+      <div class="about-card">
+        <h2 class="section-title">About</h2>
+        <p class="about-text">&lt;Nomadic Designs&gt; is a solo-built creative studio — founded by Danny Sheehan — focused on helping small businesses and startups thrive online.</p>
+        <p class="about-text">Through custom websites, conversion-driven landing pages, and smart automations powered by AI, I help entrepreneurs and teams work smarter, save time, and grow their presence from anywhere in the world.</p>
+        <p class="about-text">Beyond client projects, I build and experiment with tools like PromptPilot, Savu, RealityCheck, and Missed2Booked — combining design, automation, and data insight to solve real-world problems.</p>
+        <p class="about-text">Driven by a passion for design, technology, and data, I'm currently expanding my skill set into analytics — learning tools like Tableau, SQL, and Python to better measure, visualize, and optimize how digital systems perform.</p>
+        <p class="about-text">Whether I'm collaborating with clients or joining a team full-time, my goal stays the same: to design systems and experiences that make business simple, beautiful, and scalable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative Background -->
+  <div class="decorative-section" id="car-section">
+    <div class="car">
+      <svg viewBox="0 0 100 60" class="car-svg">
+        <path d="M10,40 L90,40 L85,25 L75,20 L25,20 L15,25 Z" fill="#e34c26"/>
+        <path d="M25,20 L75,20 L70,15 L30,15 Z" fill="#e34c26"/>
+        <path d="M25,15 L35,15 L35,20 L25,20 Z" fill="#1a1f22"/>
+        <path d="M40,15 L50,15 L50,20 L40,20 Z" fill="#1a1f22"/>
+        <path d="M55,15 L65,15 L65,20 L55,20 Z" fill="#1a1f22"/>
+        <circle cx="25" cy="40" r="6" fill="#1a1f22"/>
+        <circle cx="75" cy="40" r="6" fill="#1a1f22"/>
+        <path d="M85,30 L90,30 L90,35 L85,35 Z" fill="white"/>
+        <path d="M10,30 L15,30 L15,35 L10,35 Z" fill="#e34c26"/>
+      </svg>
+    </div>
+    <div class="mountains">
+      <svg class="mountains-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <path d="M0,200 L0,100 L100,50 L200,120 L300,40 L400,100 L500,20 L600,80 L700,30 L800,90 L900,40 L1000,100 L1000,200 Z" fill="#181c1f"/>
+        <path d="M0,200 L0,120 L150,80 L300,140 L450,60 L600,120 L750,40 L900,100 L1000,80 L1000,200 Z" fill="#1a1f22"/>
+        <path d="M0,200 L0,140 L200,100 L400,160 L600,80 L800,140 L1000,100 L1000,200 Z" fill="#1d2225"/>
+      </svg>
+    </div>
+    <div class="trees">
+      <svg class="trees-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <path d="M50,200 L50,100 L30,100 L50,60 L70,100 L50,100 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M50,200 L50,120 L30,120 L50,80 L70,120 L50,120 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M50,200 L50,140 L30,140 L50,100 L70,140 L50,140 Z" fill="#228B22"/>
+        <path d="M150,200 L150,80 L130,80 L150,40 L170,80 L150,80 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M150,200 L150,100 L130,100 L150,60 L170,100 L150,100 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M150,200 L150,120 L130,120 L150,80 L170,120 L150,120 Z" fill="#228B22"/>
+        <path d="M250,200 L250,90 L230,90 L250,50 L270,90 L250,90 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M250,200 L250,110 L230,110 L250,70 L270,110 L250,110 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M250,200 L250,130 L230,130 L250,90 L270,130 L250,130 Z" fill="#228B22"/>
+        <path d="M350,200 L350,70 L330,70 L350,30 L370,70 L350,70 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M350,200 L350,90 L330,90 L350,50 L370,90 L350,90 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M350,200 L350,110 L330,110 L350,70 L370,110 L350,110 Z" fill="#228B22"/>
+        <path d="M450,200 L450,85 L430,85 L450,45 L470,85 L450,85 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M450,200 L450,105 L430,105 L450,65 L470,105 L450,105 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M450,200 L450,125 L430,125 L450,85 L470,125 L450,125 Z" fill="#228B22"/>
+        <path d="M550,200 L550,75 L530,75 L550,35 L570,75 L550,75 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M550,200 L550,95 L530,95 L550,55 L570,95 L550,95 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M550,200 L550,115 L530,115 L550,75 L570,115 L550,115 Z" fill="#228B22"/>
+        <path d="M650,200 L650,95 L630,95 L650,55 L670,95 L650,95 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M650,200 L650,115 L630,115 L650,75 L670,115 L650,115 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M650,200 L650,135 L630,135 L650,95 L670,135 L650,135 Z" fill="#228B22"/>
+        <path d="M750,200 L750,65 L730,65 L750,25 L770,65 L750,65 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M750,200 L750,85 L730,85 L750,45 L770,85 L750,85 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M750,200 L750,105 L730,105 L750,65 L770,105 L750,105 Z" fill="#228B22"/>
+        <path d="M850,200 L850,90 L830,90 L850,50 L870,90 L850,90 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M850,200 L850,110 L830,110 L850,70 L870,110 L850,110 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M850,200 L850,130 L830,130 L850,90 L870,130 L850,130 Z" fill="#228B22"/>
+        <path d="M950,200 L950,80 L930,80 L950,40 L970,80 L950,80 Z" fill="#228B22" opacity="0.8"/>
+        <path d="M950,200 L950,100 L930,100 L950,60 L970,100 L950,100 Z" fill="#228B22" opacity="0.9"/>
+        <path d="M950,200 L950,120 L930,120 L950,80 L970,120 L950,120 Z" fill="#228B22"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section fade-in">
+    <div class="container">
+      <h2 class="section-title-center">Portfolio</h2>
+      <div class="portfolio-grid">
+        <a href="https://dannysheehan.netlify.app" target="_blank" rel="noopener" class="portfolio-card">
+          <img src="{{ url_for('static', filename='dssite.svg') }}" alt="Danny Sheehan Portfolio" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3 class="portfolio-card-title">dannysheehan.netlify.app</h3>
+            <p class="portfolio-card-text">Personal portfolio site for Danny Sheehan, showcasing web projects and creative work.</p>
+            <span class="portfolio-card-link">Visit Site</span>
+          </div>
+        </a>
+        <a href="https://reesksu.netlify.app" target="_blank" rel="noopener" class="portfolio-card">
+          <img src="{{ url_for('static', filename='reessite.svg') }}" alt="Rees KSU" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3 class="portfolio-card-title">reesksu.netlify.app</h3>
+            <p class="portfolio-card-text">Website created for the official Real Estate and Entrepreneurship Club at Kennesaw State University.</p>
+            <span class="portfolio-card-link">Visit Site</span>
+          </div>
+        </a>
+        <a href="https://deutschdetailing.com" target="_blank" rel="noopener" class="portfolio-card">
+          <img src="{{ url_for('static', filename='ddsitedisplay.svg') }}" alt="Deutsch Detailing" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3 class="portfolio-card-title">deutschdetailing.com</h3>
+            <p class="portfolio-card-text">Professional auto detailing business site with booking and service info.</p>
+            <span class="portfolio-card-link">Visit Site</span>
+          </div>
+        </a>
+        <a href="https://henhousegolf.netlify.app" target="_blank" rel="noopener" class="portfolio-card">
+          <img src="{{ url_for('static', filename='henhousegolf.png') }}" alt="Henhouse Golf" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3 class="portfolio-card-title">henhousegolf.netlify.app</h3>
+            <p class="portfolio-card-text">Professional golf coaching website featuring lessons, training programs, and booking information.</p>
+            <span class="portfolio-card-link">Visit Site</span>
+          </div>
+        </a>
+        <a href="https://missed2booked.com" target="_blank" rel="noopener" class="portfolio-card">
+          <img src="{{ url_for('static', filename='missed2booked.png') }}" alt="Missed to Booked" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3 class="portfolio-card-title">Missed to Booked</h3>
+            <p class="portfolio-card-text">Smart appointment booking automation system that converts missed opportunities into confirmed bookings.</p>
+            <span class="portfolio-card-link">Visit Site</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section fade-in">
+    <div class="container">
+      <h2 class="section-title-center">Services</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        <div class="service-card" style="flex: 0 1 500px;">
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-text">Custom and responsive websites for your business or brand. Built with modern technologies for optimal performance and user experience.</p>
+          <p class="service-note">Estimates available upon request. Pricing may vary based on project size and complexity.</p>
+        </div>
+        <div class="service-card" style="flex: 0 1 500px;">
+          <h3 class="service-title">Automation</h3>
+          <p class="service-text">Streamline your business operations with custom automation solutions. From Customer Relationship Management (CRM) to workflow automation.</p>
+          <p class="service-note">Estimates available upon request. Pricing may vary based on project size and complexity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title-center testimonials-title">What Clients Are Saying</h2>
+      <div class="testimonial-wrapper">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <span>J</span>
+            </div>
+            <div class="testimonial-content">
+              <blockquote class="testimonial-quote">
+                "Danny built me a great website that was functional, effective, and aesthetically pleasing. He was collaborative and flexible, and working with him was a great experience."
+              </blockquote>
+              <div class="testimonial-author">Jessica Pelton</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section fade-in">
+    <div class="contact-container">
+      <h2 class="section-title-center">Contact</h2>
+      <p class="contact-intro">Have a project in mind? Ask questions about specific services or schedule a consultation. I usually respond within 24 hours.</p>
+      <p class="contact-subtext">Reach out for a quote.</p>
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="d3f3deab-f5bc-4e9d-b3ff-df76a7dca066">
+        <input type="hidden" name="email" value="hello@nomadicdesigns.us">
+        
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" name="name" id="name" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea name="message" id="message" rows="4" required class="form-textarea"></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Typing animation for hero logo
+  document.addEventListener('DOMContentLoaded', function() {
+    const text = '&lt;/Nomadic Designs&gt;';
+    const target = document.getElementById('typed-logo');
+    const cursor = document.getElementById('typed-cursor');
+    let i = 0;
+    function type() {
+      if (i <= text.length) {
+        target.innerHTML = text.slice(0, i);
+        i++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+  });
+
+  // Car animation
+  const carSection = document.getElementById('car-section');
+  const car = carSection.querySelector('.car');
+  
+  function updateCarPosition() {
+    const rect = carSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const startTrigger = viewportHeight * 0.8;
+    const endTrigger = -rect.height;
+    const totalDistance = startTrigger - endTrigger;
+    const currentPosition = startTrigger - rect.top;
+    const progress = Math.min(Math.max(currentPosition / totalDistance, 0), 1);
+    const carPosition = -50 + (progress * 200);
+    car.style.transform = `translateX(${carPosition}%)`;
+  }
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateCarPosition);
+  });
+  updateCarPosition();
+</script>
+{% endblock %}
+

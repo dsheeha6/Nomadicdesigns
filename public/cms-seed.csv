@@ -1,0 +1,55 @@
+page,section,key,value,imageUrl,link,category,sort
+hire,intro,headline,"Designer, Builder, Operator",,,,1
+hire,intro,subhead,"I build clean, conversion-focused websites and lightweight automations — now growing my data toolkit.",,,,2
+hire,intro,location,"Atlanta, GA — open to remote",,,,3
+hire,work,title,"Nomadic Designs — SMB Web Sprint",,,,1
+hire,work,summary,"Designed, built, and shipped 5+ client sites with fast, accessible UX, basic SEO, and QA flows.",,,,2
+hire,work,tags,"Web Design|SEO|QA|Client Delivery",,,,3
+hire,work,link,,,"/portfolio/nomadic-designs",,4
+hire,projects,title,"PromptPilot",,,,1
+hire,projects,summary,"Prompt management & optimizer concept — streamlined prompt libraries and versioning for builders.",,,,2
+hire,projects,tags,"Product Concept|UI/UX|Automation",,,,3
+hire,projects,link,,,"/portfolio/promptpilot",,4
+hire,projects,title,"Savu",,,,5
+hire,projects,summary,"Sauna/cold plunge timer with streaks and social — web+mobile concept with simple habit loops.",,,,6
+hire,projects,tags,"Web App|Mobile Concept|Health",,,,7
+hire,projects,link,,,"/portfolio/savu",,8
+hire,projects,title,"RealityCheck",,,,9
+hire,projects,summary,"Focus/productivity tracker prototype — light analytics and session scoring to reduce phone time.",,,,10
+hire,projects,tags,"Productivity|Web App|Analytics",,,,11
+hire,projects,link,,,"/portfolio/realitycheck",,12
+hire,projects,title,"Missed2Booked",,,,13
+hire,projects,summary,"Micro-SaaS callback + text-back workflow for service businesses to capture missed calls and auto-qualify leads.",,,,14
+hire,projects,tags,"SaaS|Automations|Lead Capture",,,,15
+hire,projects,link,,,"/portfolio/missed2booked",,16
+hire,skills,value,"HTML",,,,1
+hire,skills,value,"CSS",,,,2
+hire,skills,value,"JavaScript",,,,3
+hire,skills,value,"Python (Flask, in progress)",,,,4
+hire,skills,value,"Web Design (UX/UI)",,,,5
+hire,skills,value,"SEO Basics",,,,6
+hire,skills,value,"QA & Regression Checklists",,,,7
+hire,skills,value,"Make.com Automations",,,,8
+hire,skills,value,"Telnyx/Twilio (basic)",,,,9
+hire,skills,value,"GA4 Basics",,,,10
+hire,skills,value,"Figma/Cursor",,,,11
+hire,skills,value,"Client Discovery & Scoping",,,,12
+hire,experience,role,"Founder — Nomadic Designs",,,,1
+hire,experience,dates,"2024—present",,,,2
+hire,experience,bullets,"Shipped 5+ client sites|Set up QA & accessibility checks|Implemented lightweight automations",,,,3
+hire,experience,role,"Co-Founder — Deutsch Detailing",,,,4
+hire,experience,dates,"2024—2025",,,,5
+hire,experience,bullets,"Launched local SMB brand & site|CRM + booking flow|Marketing ops & social",,,,6
+hire,experience,role,"Digital Marketing Consultant",,,,7
+hire,experience,dates,"2023—2024",,,,8
+hire,experience,bullets,"Lead capture funnels|Content & blogs|SEO & newsletters",,,,9
+hire,learning,value,"Tableau (dashboards & viz)",,,,1
+hire,learning,value,"Excel/Google Sheets (analysis)",,,,2
+hire,learning,value,"SQL basics (SELECT/JOIN/GROUP)",,,,3
+hire,learning,value,"Python/pandas (data prep)",,,,4
+hire,learning,value,"A/B testing basics",,,,5
+hire,learning,value,"Accessibility (WCAG AA)",,,,6
+hire,cta,resumeUrl,,,"/static/assets/dannysheehanresume.pdf",,1
+hire,cta,email,"daniel.sheehan03@gmail.com",,,,2
+hire,cta,cal,,,https://calendar.app.google/Ep6i3vsvQ4erc6229,,3
+

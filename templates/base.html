@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Nomadic Designs | Web. Automation. Anywhere.{% endblock %}</title>
+  <meta name="description" content="{% block description %}Nomadic Designs: Web, Automation, and AI solutions for small businesses.{% endblock %}">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0FSMRMWRW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G0FSMRMWRW');
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}" />
+  
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="logo-code">&lt;/Nomadic Designs&gt;</a>
+      <div class="nav-links">
+        <a href="/#about" class="nav-link">About</a>
+        <a href="/#portfolio" class="nav-link">Portfolio</a>
+        <a href="/#services" class="nav-link">Services</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/hire-me" class="nav-link nav-cta">Hire Me</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </div>
+      <button id="menuBtn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="/#about" class="mobile-menu-item">About</a>
+      <a href="/#portfolio" class="mobile-menu-item">Portfolio</a>
+      <a href="/#services" class="mobile-menu-item">Services</a>
+      <a href="/blog.html" class="mobile-menu-item">Blog</a>
+      <a href="/hire-me" class="mobile-menu-item">Hire Me</a>
+      <a href="/#contact" class="mobile-menu-item">Contact</a>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    &copy; 2025 &lt;/Nomadic Designs&gt; • 
+    <a href="/privacy-policy.html" class="footer-link">Privacy Policy</a> • 
+    <a href="/terms-of-service.html" class="footer-link">Terms of Service</a> • 
+    <a href="/faq.html" class="footer-link">FAQ</a>
+  </footer>
+
+  <!-- Botpress Webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script>
+    window.botpress.init({
+      "botId": "1dca80f8-c530-454d-a558-d278d8cb831e",
+      "clientId": "619b1596-9e4e-47cf-b7f8-38f4977cc585",
+      "configuration": {
+        "version": "v1",
+        "botName": "Nomad",
+        "botDescription": "",
+        "website": {"title": "https://nomadicdesigns.us/", "link": "https://nomadicdesigns.us/"},
+        "email": {"title": "hello@nomadicdesigns.us", "link": "hello@nomadicdesigns.us"},
+        "phone": {"title": "7706953811", "link": "7706953811"},
+        "termsOfService": {"title": "Terms of service", "link": "https://nomadicdesigns.us/terms-of-service"},
+        "privacyPolicy": {"title": "Privacy policy", "link": "https://nomadicdesigns.us/privacy-policy"},
+        "color": "#3276EA",
+        "variant": "solid",
+        "headerVariant": "solid",
+        "themeMode": "dark",
+        "fontFamily": "inter",
+        "radius": 4,
+        "feedbackEnabled": true,
+        "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+        "allowFileUpload": false
+      }
+    });
+  </script>
+
+  <script src="{{ url_for('static', filename='js/site.js') }}"></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>
+
