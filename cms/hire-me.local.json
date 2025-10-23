@@ -1,8 +1,8 @@
 {
   "intro": {
-    "headline": "Designer, Builder, Operator",
-    "subhead": "I build clean, conversion-focused websites and lightweight automations — now growing my data toolkit.",
-    "location": "Atlanta, GA — open to remote"
+    "headline": "Builder. Analyst. Problem Solver.",
+    "subhead": "Creating digital systems that work beautifully — open to work anywhere.",
+    "location": ""
   },
   "work": [
     {
@@ -39,10 +39,9 @@
     }
   ],
   "skills": [
-    "HTML","CSS","JavaScript","Python (Flask, in progress)",
     "Web Design (UX/UI)","SEO Basics","QA & Regression Checklists",
-    "Make.com Automations","Telnyx/Twilio (basic)","GA4 Basics",
-    "Figma/Cursor","Client Discovery & Scoping"
+    "Make & Zapier","GA4 Basics",
+    "Figma/Cursor","Excel/Google Sheets","Slidedecks & Word","Notion","A/B testing basics","Client Discovery & Scoping"
   ],
   "experience": [
     {
@@ -62,12 +61,12 @@
     }
   ],
   "learning": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python",
     "Tableau (dashboards & viz)",
-    "Excel/Google Sheets (analysis)",
-    "SQL basics (SELECT/JOIN/GROUP)",
-    "Python/pandas (data prep)",
-    "A/B testing basics",
-    "Accessibility (WCAG AA)"
+    "SQL basics (SELECT/JOIN/GROUP)"
   ],
   "cta": { "resumeUrl": "/static/assets/dannysheehanresume.pdf", "email": "daniel.sheehan03@gmail.com", "cal": "https://calendar.app.google/Ep6i3vsvQ4erc6229" }
 }
