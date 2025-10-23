@@ -85,6 +85,51 @@
       max-width: 100%;
       height: auto;
     }
+    /* Animated Hire Me button */
+    .nav-cta {
+      border: 2px solid #e34c26;
+      border-radius: 10px;
+      padding: 6px 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 70%,
+        rgba(227, 76, 38, 0.8) 80%,
+        rgba(255, 150, 100, 1) 85%,
+        rgba(255, 255, 255, 1) 90%,
+        rgba(255, 150, 100, 1) 95%,
+        rgba(227, 76, 38, 0.8) 100%,
+        transparent 100%
+      );
+      border-radius: 10px;
+      animation: rotateBorder 3s linear infinite;
+      z-index: -1;
+    }
+    .nav-cta::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #121212;
+      border-radius: 8px;
+      z-index: -1;
+    }
+    @keyframes rotateBorder {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="white"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Fira Mono, Menlo, monospace" font-size="28" fill="%23e34c26" font-weight="bold" >&lt;/ND&gt;</text></svg>' />
 </head>
@@ -98,6 +143,7 @@
         <a href="index.html#portfolio" class="text-white hover:text-[#e34c26] transition-colors nav-link">Portfolio</a>
         <a href="index.html#services" class="text-white hover:text-[#e34c26] transition-colors nav-link">Services</a>
         <a href="blog.html" class="text-forest">Blog</a>
+        <a href="hire-me" class="text-white hover:text-[#e34c26] transition-colors nav-link nav-cta">Hire Me</a>
         <a href="index.html#contact" class="text-white hover:text-[#e34c26] transition-colors nav-link">Contact</a>
       </div>
       <button id="menuBtn" class="md:hidden text-light focus:outline-none p-2" aria-label="Toggle menu">
@@ -109,6 +155,7 @@
       <a href="index.html#portfolio" class="mobile-menu-item hover:text-forest transition">Work</a>
       <a href="index.html#services" class="mobile-menu-item hover:text-forest transition">Services</a>
       <a href="blog.html" class="mobile-menu-item text-forest">Blog</a>
+      <a href="hire-me" class="mobile-menu-item hover:text-forest transition">Hire Me</a>
       <a href="index.html#contact" class="mobile-menu-item hover:text-forest transition">Contact</a>
     </div>
   </nav>
